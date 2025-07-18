@@ -1,0 +1,11 @@
+Django>=4.2.0
+djangorestframework>=3.14.0
+django-oauth-toolkit>=2.3.0
+psycopg2-binary>=2.9.9
+django-cors-headers>=4.3.1
+python-dotenv>=1.0.0
+# Pytest
+pytest==8.0.0
+pytest-django==4.7.0
+pytest-cov==4.1.0
+pytest-xdist==3.5.0  # Para ejecutar tests en paralelo

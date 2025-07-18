@@ -99,7 +99,7 @@ curl -X POST http://localhost:8000/api/register/ \
 }'
 ```
 
-**Respuesta**: Incluye las credenciales OAuth2 necesarias para autenticación.
+**Respuesta**: Incluye las credenciales OAuth2 necesarias para autenticación. Se han añadido por facilitar el uso de los endpoints.
 
 ### 2. Obtención de Token
 ```bash

@@ -11,17 +11,13 @@ class TestTaskAPI:
     @pytest.fixture
     def usuario1(self):
         return User.objects.create_user(
-            username='usuario1',
-            password='contraseña123',
-            email='usuario1@test.com'
+            username="usuario1", password="contraseña123", email="usuario1@test.com"
         )
 
     @pytest.fixture
     def usuario2(self):
         return User.objects.create_user(
-            username='usuario2',
-            password='contraseña123',
-            email='usuario2@test.com'
+            username="usuario2", password="contraseña123", email="usuario2@test.com"
         )
 
     @pytest.fixture

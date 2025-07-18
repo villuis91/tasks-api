@@ -43,6 +43,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "oauth2_provider.middleware.OAuth2TokenMiddleware",
 ]
 
 ROOT_URLCONF = "tasksapi.urls"
@@ -80,8 +81,8 @@ DATABASES = {
 }
 
 REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "oauth2_provider.contrib.rest_framework.OAuth2Authentication",
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
     ),
 }
 

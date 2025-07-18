@@ -21,19 +21,19 @@ class RegisterView(APIView):
 
             Application.objects.create(
                 user=user,
-                name=f'TasksAPI-{user.username}',
+                name=f"TasksAPI-{user.username}",
                 client_id=client_id,
                 client_secret=client_secret,
-                client_type='confidential',
-                authorization_grant_type='password',
-                skip_authorization=True
+                client_type="confidential",
+                authorization_grant_type="password",
+                skip_authorization=True,
             )
 
             response_data = {
                 "message": "Usuario registrado exitosamente",
                 "oauth2_credentials": {
                     "client_id": client_id,
-                    "client_secret": client_secret
+                    "client_secret": client_secret,
                 },
                 "instrucciones": {
                     "obtener_token": {
@@ -47,10 +47,10 @@ class RegisterView(APIView):
                             "username": user.email,
                             "password": "tu-contraseña",
                             "client_id": client_id,
-                            "client_secret": client_secret
-                        }
+                            "client_secret": client_secret,
+                        },
                     }
-                }
+                },
             }
 
             return Response(response_data, status=status.HTTP_201_CREATED)

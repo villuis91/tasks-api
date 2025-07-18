@@ -20,6 +20,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Propias
+    'core',
+    'tasks',
+    # Django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -29,9 +33,6 @@ INSTALLED_APPS = [
     # Apps de terceros
     'rest_framework',
     'oauth2_provider',
-    # Apps propias
-    'core',
-    'tasks',
 ]
 
 MIDDLEWARE = [
@@ -82,9 +83,6 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
     ),
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    )
 }
 
 
@@ -128,3 +126,17 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Añadir al final del archivo
+AUTH_USER_MODEL = 'core.User'
+
+# Configuración de OAuth2
+OAUTH2_PROVIDER = {
+    'SCOPES': {'read': 'Read scope', 'write': 'Write scope'},
+    'ACCESS_TOKEN_EXPIRE_SECONDS': 3600,  # 1 hora
+    'REFRESH_TOKEN_EXPIRE_SECONDS': 86400,  # 1 día
+    'ALLOWED_GRANT_TYPES': [
+        'password',
+        'refresh_token',
+    ],
+}
